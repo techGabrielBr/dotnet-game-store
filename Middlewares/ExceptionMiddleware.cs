@@ -20,13 +20,22 @@ namespace GamesStore.Middlewares
             }
             catch (Exception ex)
             {
-                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 context.Response.ContentType = "application/json";
 
-                await context.Response.WriteAsync(JsonSerializer.Serialize(new
+                context.Response.StatusCode = ex switch
                 {
-                    error = ex.Message
-                }));
+                    ArgumentException => StatusCodes.Status400BadRequest,
+                    UnauthorizedAccessException => StatusCodes.Status401Unauthorized,
+                    KeyNotFoundException => StatusCodes.Status404NotFound,
+                    _ => StatusCodes.Status500InternalServerError
+                };
+
+                var response = new
+                {
+                    error = "Ocorreu um erro ao processar a requisição"
+                };
+
+                await context.Response.WriteAsync(JsonSerializer.Serialize(response));
             }
         }
     }
