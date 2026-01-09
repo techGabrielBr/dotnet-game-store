@@ -55,21 +55,5 @@ namespace GamesStore.API.Controllers
 
             return CreatedAtAction(nameof(GetById), new { id = game.Id }, game);
         }
-
-        [HttpPost("{id:guid}/buy")]
-        [Authorize]
-        public async Task<IActionResult> FakeBuy(Guid id)
-        {
-            var game = await _gameRepository.GetByIdAsync(id);
-            if (game == null)
-                return NotFound("Jogo não encontrado");
-
-            return Ok(new
-            {
-                Message = "Compra simulada com sucesso",
-                GameId = game.Id,
-                PricePaid = game.CurrentPrice
-            });
-        }
     }
 }

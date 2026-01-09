@@ -9,7 +9,7 @@ using Microsoft.OpenApi;
 var builder = WebApplication.CreateBuilder(args);
 
 // ======================
-// Database (Supabase)
+// Database (Sqlite)
 // ======================
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))

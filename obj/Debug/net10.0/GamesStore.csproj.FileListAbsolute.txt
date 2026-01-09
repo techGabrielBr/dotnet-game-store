@@ -311,3 +311,4 @@ C:\Users\Gabriel\source\repos\GamesStore\GamesStore\bin\Debug\net10.0\appsetting
 C:\Users\Gabriel\source\repos\GamesStore\GamesStore\bin\Debug\net10.0\appsettings.json
 C:\Users\Gabriel\source\repos\GamesStore\GamesStore\bin\Debug\net10.0\Properties\launchSettings.json
 C:\Users\Gabriel\source\repos\GamesStore\GamesStore\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Gabriel\source\repos\GamesStore\GamesStore\obj\Debug\net10.0\GamesStore.sourcelink.json
