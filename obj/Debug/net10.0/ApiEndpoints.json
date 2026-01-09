@@ -42,22 +42,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GamesStore.API.Controllers.GameController",
-    "Method": "FakeBuy",
-    "RelativePath": "api/games/{id}/buy",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "GamesStore.API.Controllers.PromotionController",
     "Method": "Create",
     "RelativePath": "api/promotion",

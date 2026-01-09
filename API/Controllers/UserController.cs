@@ -10,17 +10,18 @@ namespace GamesStore.API.Controllers
 {
     [ApiController]
     [Route("/user")]
-    [Authorize(Policy = "AdminOnly")]
     public class UsersController(IUserRepository userRepository, IUserGameRepository userGameRepository) : ControllerBase
     {
         private readonly IUserRepository _userRepository = userRepository;
         private readonly IUserGameRepository _userGameRepository = userGameRepository;
 
         [HttpGet]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> GetAll()
             => Ok(await _userRepository.GetAllAsync());
 
         [HttpPost]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Create(CreateUserRequest request)
         {
             var errors = UserValidator.Validate(
@@ -53,6 +54,7 @@ namespace GamesStore.API.Controllers
         }
 
         [HttpPut("{id:guid}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Update(Guid id, UpdateUserRequest request)
         {
             var user = await _userRepository.GetByIdAsync(id);
@@ -66,6 +68,7 @@ namespace GamesStore.API.Controllers
         }
 
         [HttpDelete("{id:guid}")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var user = await _userRepository.GetByIdAsync(id);

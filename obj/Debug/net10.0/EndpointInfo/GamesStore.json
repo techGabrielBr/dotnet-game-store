@@ -131,29 +131,6 @@
         }
       }
     },
-    "/api/games/{id}/buy": {
-      "post": {
-        "tags": [
-          "Game"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/promotion": {
       "post": {
         "tags": [
